@@ -4,7 +4,11 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "start": "cross-env NODE_ENV=development electron .",
+    "build:electron": "vite build && electron-builder"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +21,13 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "electron": "^30.0.6"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.2.11",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2"
   }
 }

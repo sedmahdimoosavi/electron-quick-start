@@ -1,0 +1,146 @@
+/* styles.css */
+
+/* Add styles here to customize the appearance of your app */
+
+
+@font-face {
+    font-family: 'iran-yekan';
+    /* src: url('../assets/Fonts/IranYekanX/Farsi\ numerals/IRANYekanXFaNum-Regular.ttf'); */
+    src: url('../assets/Fonts/IranYekanX/Farsi\ numerals/IRANYekanXFaNum-Regular.ttf')
+}
+
+@font-face {
+    font-family: 'iran-yekan-demi-bold';
+    src: url('../assets/Fonts/IranYekanX/Farsi\ numerals/IRANYekanXFaNum-DemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'iran-yekan-bold';
+    src: url('../assets/Fonts/IranYekanX/Farsi\ numerals/IRANYekanXFaNum-Bold.ttf');
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+button,
+ul,
+li,
+input,
+label,
+a,
+.btn {
+    font-family: 'iran-yekan', 'iran-yekan-demi-bold', 'iran-yekan-bold', sans-serif;
+    user-select: none;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'iran-yekan', 'iran-yekan-demi-bold', 'iran-yekan-bold', sans-serif;
+    direction: rtl;
+}
+
+body {
+    margin: 0;
+}
+
+#webview_login {
+    height: calc(100% - 6px);
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+    /* border: 1px solid red; */
+    background-color: white;
+    position: absolute;
+}
+
+
+#drag-region {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+
+}
+
+#drag-region .clickable {
+    user-select: auto;
+    -webkit-user-select: auto;
+    -webkit-app-region: none;
+}
+
+
+
+/* Loader */
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #06a693;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.8s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.8s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.8s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.8s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}

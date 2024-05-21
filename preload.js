@@ -6,13 +6,10 @@
  *
  * https://www.electronjs.org/docs/latest/tutorial/sandbox
  */
-window.addEventListener('DOMContentLoaded', () => {
-  const replaceText = (selector, text) => {
-    const element = document.getElementById(selector)
-    if (element) element.innerText = text
-  }
+const { contextBridge, ipcRenderer } = require("electron");
 
-  for (const type of ['chrome', 'node', 'electron']) {
-    replaceText(`${type}-version`, process.versions[type])
-  }
-})
+contextBridge.exposeInMainWorld("electronAPI", {
+  toggleFullscreen: () => ipcRenderer.send("toggle-fullscreen"),
+  minimize: () => ipcRenderer.send("minimize"),
+  close: () => ipcRenderer.send("close"),
+});
